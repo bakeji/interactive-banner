@@ -1,6 +1,6 @@
 
 
-export default function BannerForm({bannerContent, setBannerContent, handleSubmit }) {
+export default function BannerForm({bannerContent, setBannerContent }) {
 
    function handleChange(e) {
     const { name, value, type, files } = e.target;
@@ -12,12 +12,13 @@ export default function BannerForm({bannerContent, setBannerContent, handleSubmi
 
     
     return(
-    <div className="mt-[20px] w-full ">
-        <h1 className="text-center text-[32px]  font-[700]">Change Banner Content</h1>
-        <form  className=" w-full flex mt-2 gap-[10px] items-center justify-center flex-col ">
+        <div className="pb-5">
+    <div className="mt-[20px] rounded-lg mx-auto w-[40%] pt-3 bg-[#ffffff] shadow-lg ">
+        <h1 className="text-center text-[32px] text-[#17092d]  font-[700]">Change Banner Content</h1>
+        <form  className=" w-full  flex mt-2 gap-[10px] items-center justify-center flex-col ">
             <fieldset className="flex flex-col gap-2 w-full items-center ">
-                <label className="w-[50%] text-[24px] font-[500]" htmlFor="title">Title</label>
-                <input className="border p-3 border-[#17092d] rounded-md w-[50%] h-[40px] outline-none"
+                <label className="w-[80%] text-[24px] font-[500]" htmlFor="title">Title</label>
+                <input className="border p-3 border-[#17092d] rounded-md w-[80%] h-[40px] outline-none"
                  type="text"
                   id="title" 
                   name="title"
@@ -26,18 +27,17 @@ export default function BannerForm({bannerContent, setBannerContent, handleSubmi
             </fieldset>
 
             <fieldset className="flex flex-col  gap-2 w-full items-center" >
-                <label className="w-[50%] text-[18px] font-[500]" htmlFor="content">Content</label>
-                <textarea className="border p-3 border-[#17092d] rounded-md w-[50%] h-[40px] outline-none resize-none" 
+                <label className="w-[80%] text-[18px] font-[500]" htmlFor="content">Content</label>
+                <textarea className="border p-3 border-[#17092d] rounded-md w-[80%] h-[60px] outline-none resize-none" 
                 id="content" 
                 name="content"
                 value={bannerContent.content}
                 onChange={handleChange}>
                 </textarea>
             </fieldset>
-            <div className="flex items-center w-full justify-center gap-25">
-                <fieldset className="flex flex-col gap-2   items-center">
-                    <label className="w-[100%] text-[18px] font-[500]" htmlFor="picture">Add a picture</label>
-                    <input className="border border-[#17092d] p-3 text-center rounded-md w-[100%] h-[40px] outline-none resize-none" 
+                <fieldset className="flex flex-col gap-2 w-full   items-center">
+                    <label className="w-[80%] text-[18px] font-[500]" htmlFor="picture">Add a picture</label>
+                    <input className="border cursor-pointer border-[#17092d] p-3 text-center rounded-md w-[80%] h-[40px] outline-none resize-none" 
                     type="file"  
                     id="picture" 
                     name="picture"
@@ -45,19 +45,32 @@ export default function BannerForm({bannerContent, setBannerContent, handleSubmi
                     onChange={handleChange}
                      />
                 </fieldset>
-
-                <fieldset className="flex flex-col  gap-2 items-center">
-                    <label htmlFor=" text-[18px] font-[500] background">background color</label>
-                    <input className="border border-[#17092d] rounded-lg w-[100%] h-[40px] outline-none resize-none" 
+                <div className="flex items-center mb-4 w-[80%] justify-between gap-2">    
+                <fieldset className="flex  gap-2 items-center">
+                    <label htmlFor="text" className="text-[18px] font-[500] background">background color:</label>
+                    <input className="border cursor-pointer border-[#17092d] w-[30px] rounded-[50%] h-[30px] outline-none resize-none" 
                     type="color"
                     name="background"
                      id="background" 
                      value={bannerContent.background}
                      onChange={handleChange}/>
                 </fieldset>
+
+                <fieldset className="flex  gap-2 items-center">
+                    <label htmlFor="text" className=" text-[18px] font-[500] background">Text color</label>
+                    <input className="border cursor-pointer border-[#17092d] rounded-[50%] w-[30px] h-[30px] outline-none resize-none" 
+                    type="color"
+                    name="textColor" 
+                     id="textColor" 
+                     value={bannerContent.textColor}
+                     onChange={handleChange}/>
+                </fieldset>
+
             </div>
+        
 
  </form>
+ </div>
 </div>
     )
 }

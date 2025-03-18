@@ -1,6 +1,7 @@
 export default function Banner({bannerContent}) {
+    
     return(
-        <div className={`w-full h-[217px] bg-[${bannerContent.background}] flex items-center justify-center gap-10 text-white`}>
+        <div className={`w-full h-[217px] bg-[${bannerContent.background}] flex items-center justify-center gap-10 ]`} style={{color: bannerContent.textColor}}>
             <div className={`w-[171px] h-[171px] rounded-[50%] border-[#FF0E8B] flex items-center justify-center border-2 bg-[url(${bannerContent.picture})] bg-no-repeat bg-center bg-cover`}></div>
 
             <div className="flex flex-col items-center w-[70%] justify-center">

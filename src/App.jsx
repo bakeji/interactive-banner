@@ -7,11 +7,13 @@ export default function App() {
         title: "Music🎶",
         content: "I love listening to music so much, especially Afrobeats. Afrobeats is a genre with soulful melodies and beautiful rythyms.",
         picture: "/pic.jpg",
-        background: "#121B68"
+        background: "#121B68",
+        textColor:   "#ffffff"
     })
 
+    
   return (
-    <div className="w-full font-inter h-[100vh] bg-[#E0E0E0]">
+    <div className="w-full font-inter h-[100vh]">
         <Banner bannerContent={bannerContent} />
         <BannerForm bannerContent={bannerContent} setBannerContent={setBannerContent}/>
     </div>
