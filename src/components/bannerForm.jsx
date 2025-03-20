@@ -23,11 +23,12 @@ export default function BannerForm({ bannerContent, setBannerContent }) {
       reader.readAsDataURL(file);
     }
   }
+  console.log('rendered')
 
   return (
-    <div className="pb-5">
-      <div className="mt-[20px] rounded-lg mx-auto w-[40%] pt-3 bg-[#ffffff] shadow-lg ">
-        <h1 className="text-center text-[32px] text-[#17092d]  font-[700]">
+    <div data-testid="banner-form"  className="pb-5">
+      <div className="mt-[20px] rounded-lg mx-auto w-[40%] max-md:w-[80%] max-sm:w-[90%] pt-3 bg-[#ffffff] shadow-lg ">
+        <h1 className="text-center text-[32px] text-[#17092d] max-md:text-[24px]  font-[700]">
           Change Banner Content
         </h1>
         <form className=" w-full  flex mt-2 gap-[10px] items-center justify-center flex-col ">
@@ -70,7 +71,7 @@ export default function BannerForm({ bannerContent, setBannerContent }) {
               onChange={handleFile}
             />
           </fieldset>
-          <div className="flex items-center mb-4 w-[80%] justify-between gap-2">
+          <div className="flex items-center mb-4 w-[80%] justify-between gap-2 max-sm:flex-col">
             <fieldset className="flex  gap-2 items-center">
               <label
                 htmlFor="text"
